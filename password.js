@@ -15,8 +15,9 @@ function isUpper(string) {
   }
 }
 var hasNumber = /\d/; 
+var hasSpecial = /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/;
 reader.question("Please enter a password to validate: ", function (input) {
-  if (input.length >= 10 && input.length < 25 && isUpper(input) && hasNumber.test(input)) {
+  if (input.length >= 10 && input.length < 25 && isUpper(input) && hasNumber.test(input) && hasSpecial.test(input)) {
     console.log(
       "Success",
       `
